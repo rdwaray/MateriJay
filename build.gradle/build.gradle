@@ -1,5 +1,5 @@
 plugins {
-    id 'groovy'
+    id 'java'
 }
 
 group = 'org.example'
@@ -10,19 +10,16 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.apache.groovy:groovy:4.0.14'
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation 'com.google.guava:guava:29.0-jre'
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8'
 }
 
 test {
     useJUnitPlatform()
 }
-task greetingTask {
-    doLast {
-        String nama = project.hasProperty('nama') ? project.property('nama') : 'Gradle User'
-        println "Hello, $nama! Welcome to Gradle World!"
-    }
-}
+//task greetingTask {
+  //  doLast {
+ //       String nama = project.hasProperty('nama') ? project.property('nama') : 'Gradle User'
+ //       println "Hello, $nama! Welcome to Gradle World!"
+ //   }
+//}
